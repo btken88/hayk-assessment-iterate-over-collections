@@ -12,7 +12,8 @@ end
 companies = [
     Company.new('Alpha', 30),
     Company.new('Beta', 300),
-    Company.new('Delta', 3000)
+    Company.new('Delta', 3000),
+    Company.new('Omega', 25)
 ]
 
 ### Your code below this
@@ -40,15 +41,15 @@ end
 # Find the largest company
 def find_largest_company companies
   companies.reduce() do |largest_company, company|
-    if company.size > largest_company.size
-      company
-    else
-      largest_company
-    end
+    company.size > largest_company.size ? company : largest_company
   end
 end
 
 # Sort the companies from largest to smallest
 def sort_companies companies
-  asdio
+  sorted_companies = companies.sort {|company1, company2| company1.size <=> company2.size}
+  company_information_strings sorted_companies
 end
+
+binding.pry
+0
